@@ -4,3 +4,5 @@ but edited to work on the clock from https://www.thingiverse.com/thing:2968056 /
 Basically Ivan used 3 LED's per segment, the other one used 2 LED's. I had issues getting the software designed for it to work so
 edited the original code to work with 2 LED's plus added a few little features like LED brightness and LED colour. Uploaded incase anyone
 needs it plus a backup for myself.
+
+Also now updated with a very basic way to adjust the time for daylight savings, not pretty but works. If someone has the skills to do it properly please be by guest.
