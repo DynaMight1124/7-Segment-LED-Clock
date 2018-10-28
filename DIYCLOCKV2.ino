@@ -4,8 +4,8 @@
 #include <Adafruit_NeoPixel.h>
 
 
-char ssid[] = "Gavs Wireless";
-char pass[] = "893D44f8f2";
+char ssid[] = "EnterSSIDHere";
+char pass[] = "EnterPasswordHere";
 
 int hours =0;
 int mins =0;
