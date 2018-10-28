@@ -14,7 +14,7 @@ int mins =0;
 #define NUMPIXELS      58
 #define LEDBRIGHTNESS  50 // Range is from 0 to 255
 #define LEDCOLOUR      0, 0, 255 // Colour in RGB format, 255, 0, 0 is Red, 0, 0, 255 is Blue and 255, 255, 255 is White
-#define TIMECORRECTION epoch-3600 // Very basic way to correct time for daylight savings etc, 3600 = 1 hour, so epoch-3600 will take away 1 hour, epoch+3600 will add an hour, epoch+7200 will add 2 hours etc. epoch-0 will use UTC time. 
+#define TIMECORRECTION epoch-0 // Very basic way to correct time for daylight savings etc, 3600 = 1 hour, so epoch-3600 will take away 1 hour, epoch+3600 will add an hour, epoch+7200 will add 2 hours etc. epoch-0 will use UTC time. 
 
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
