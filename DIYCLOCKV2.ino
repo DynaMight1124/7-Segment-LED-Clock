@@ -3,8 +3,9 @@
 #include <WiFiUdp.h>
 #include <Adafruit_NeoPixel.h>
 
-char ssid[] = "Your SSID";
-char pass[] = "Your Password";
+
+char ssid[] = "Gavs Wireless";
+char pass[] = "893D44f8f2";
 
 int hours =0;
 int mins =0;
@@ -13,7 +14,7 @@ int mins =0;
 #define NUMPIXELS      58
 #define LEDBRIGHTNESS  50 // Range is from 0 to 255
 #define LEDCOLOUR      0, 0, 255 // Colour in RGB format, 255, 0, 0 is Red, 0, 0, 255 is Blue and 255, 255, 255 is White
-
+#define TIMECORRECTION epoch-3600 // Very basic way to correct time for daylight savings etc, 3600 = 1 hour, so epoch-3600 will take away 1 hour, epoch+3600 will add an hour, epoch+7200 will add 2 hours etc. epoch-0 will use UTC time. 
 
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
@@ -22,7 +23,7 @@ Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ80
 unsigned int localPort = 2390;
 
 IPAddress timeServerIP;
-const char* ntpServerName = "time.nist.gov";
+const char* ntpServerName = "uk.pool.ntp.org";
 
 const int NTP_PACKET_SIZE = 48;
 
@@ -78,6 +79,8 @@ void loop()
     unsigned long secsSince1900 = highWord << 16 | lowWord;
     const unsigned long seventyYears = 2208988800UL;
     unsigned long epoch = secsSince1900 - seventyYears;
+    epoch=(TIMECORRECTION);
+
 
     hours = (epoch  % 86400L) / 3600;
     if (hours<24)
